@@ -1,8 +1,17 @@
 package extend.practice;
 
 public class Oak extends Monster {
-	public Oak(String name, int hp, int offensive, String skill) {
+	public Oak(String name, int hp, int offensive) {
 		super(name, hp, offensive);
-		this.skill = skill;
+	}
+	
+	@Override
+	public void attack(Living target) {
+		int damage = this.offensive * Rand.get(10);
+		System.out.println(name + "が槍で攻撃!" + target.name + "に" +  damage + "のダメージ！");
+		target.hp = target.hp - damage;
+		if (target.hp <= 0) {
+			System.out.println(target.name + "は倒れた。");
+		}
 	}
 }

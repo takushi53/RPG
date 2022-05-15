@@ -5,28 +5,24 @@ import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
-		Human[] humans = new Human[] {
-				new Brave("勇者", 300, 50, "剣"),
-				new Fighter("戦士", 500, 60, "斧"),
-				new Wizard("魔法使い", 200, 50, "魔法")
-		};
+			Brave brave = new Brave("勇者", 300, 50);
+			Fighter fighter = new Fighter("戦士", 500, 60);
+			Wizard wizard = new Wizard("魔法使い", 200, 50);
 
-		Monster[] monsters = new Monster[] {
-				new Slime("スライム", 100, 30, "体当たり"),
-				new Oak("オーク", 400, 40, "槍"),
-				new Dragon("ドラゴン", 500, 80, "炎")
-		};		
+			Slime slime = new Slime("スライム", 100, 30);
+			Oak oak = new Oak("オーク", 400, 40);
+			Dragon dragon = new Dragon("ドラゴン", 500, 80);
 		
 		List<Human> HumanList = new ArrayList<>();
 		List<Monster> MonsterList = new ArrayList<>();
 		
-		for (Human human : humans) {
-			HumanList.add(human);
-		}
+		HumanList.add(brave);
+		HumanList.add(fighter);
+		HumanList.add(wizard);
 		
-		for (Monster monster : monsters) {
-			MonsterList.add(monster);
-		}
+		MonsterList.add(slime);
+		MonsterList.add(oak);
+		MonsterList.add(dragon);
 		
 		while(HumanList.size() > 0 && MonsterList.size() > 0) {
 			Human human = HumanList.get(Rand.get(HumanList.size()));
